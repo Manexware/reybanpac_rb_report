@@ -12,6 +12,7 @@
     <!--<link href="/static/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet">-->
     <link href="/static/bootstrap-datepicker/css/datepicker.css" rel="stylesheet">
     <link href="/static/DataTables/media/css/dataTables.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,12 +27,13 @@
     <script src="/static/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
     <script src="/static/DataTables/media/js/dataTables.js"></script>
     <script src="/static/highchart/highchart.js"></script>
-    <script src="/static/highchartTable/jquery.highchartTable-min.js"></script>
+
+    <script src="/static/highchart/modules/data.js"></script>
+    <script src="/static/highchart/modules/exporting.js"></script>
 </head>
 <body>
 <div class="container">
-    <nav class="navbar navbar-default" style="color: #FFFFFF;
-    background-color: #668cff;">
+    <nav class="navbar navbar-default custom-navbar">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -43,7 +45,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/pesos_cantidades">Pesos y cantidades</a></li>
+                    <li><a href="/pesos_cantidades">Pesos y cantidades</a></li>
                     <li><a href="/ranking_empleados">Ranking por empleados</a></li>
                     <li><a href="/racimos_cinta">Racimos por cinta</a></li>
                     <li><a href="/racimos_faltantes">Racimos faltantes</a></li>
@@ -63,5 +65,6 @@
     {% endif %}
     {% endwith %}
 </div>
+<script src="/static/js/my_js.js"></script>
 </body>
 </html>

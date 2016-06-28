@@ -16,7 +16,7 @@
                 <div class="input-group date">
                     {{form.date(class_="form-control")}}
                     <span class="input-group-addon">
-                            <i class="glyphicon glyphicon-th"></i>
+                            <i class="glyphicon glyphicon-th custom-cursor-pointer"></i>
                     </span>
                 </div>
             </div>
@@ -45,14 +45,8 @@
                 {{form.group_by(class_="form-control")}}
             </div>
             <script type="text/javascript">
-                        $('.input-group.date').datepicker({
-                            format: "yyyy-mm-dd",
-                            autoclose: true,
-                            todayHighlight: true,
-                            todayBtn: true,
-                            setDate :  new Date(),
-                        });
-                </script>
+
+            </script>
             <div class="form-group">
                 <button type="submit" class="btn btn-default">Submit</button>
             </div>
@@ -87,8 +81,7 @@
             {% endfor %}
             </tbody>
         </table>
-        <table id="report_column" class="table compact hover" style="display:none" data-graph-container="#graphcontainer"
-               data-graph-type="column" >
+        <table id="report_column">
             <thead >
             <tr>
                 <th>Cinta</th>
@@ -103,34 +96,7 @@
             <tbody>
             {% for row in data %}
             <tr>
-                <td class="dt-center">{{row[5]}}</td>
-                <td class="dt-center">{{row[12]}}</td>
-                <td class="dt-center">{{row[11]}}</td>
-                <td class="dt-center">{{row[14]}}</td>
-                <td class="dt-center">{{row[17]}}</td>
-                <td class="dt-center">{{row[15]}}</td>
-                <td class="dt-center">{{row[16]}}</td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-        </table>
-        <table id="report_pie" class="table compact hover" style="display:none">
-            <thead >
-            <tr>
-                <th>Cinta</th>
-                <th >Cuadrilla</th>
-                <th>Cant. Registrada</th>
-                <th>Tara Promedio</th>
-                <th>Peso Promedio</th>
-                <th>Peso Minimo</th>
-                <th>Peso Maximo</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for row in data %}
-            <tr>
-                <td class="dt-center">{{row[5]}}</td>
+                <th class="dt-center">{{"'"+row[5]|string+"'"}}</th>
                 <td class="dt-center">{{row[12]}}</td>
                 <td class="dt-center">{{row[11]}}</td>
                 <td class="dt-center">{{row[14]}}</td>
@@ -143,14 +109,8 @@
         </table>
     </div>
 </div>
-<div class="col-sm-6">
+<div class="col-sm-12">
     <div id="graphcontainer">
     </div>
 </div>
-<div class="col-sm-6">
-    <div id="graphcontainer2">
-    </div>
-</div>
-<script type="text/javascript">
-</script>
 {% endblock %}
