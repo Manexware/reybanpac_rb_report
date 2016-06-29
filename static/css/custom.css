@@ -5,3 +5,6 @@
 .custom-cursor-pointer{
     cursor: pointer;
 }
+.custom-no-display{
+    display:none;
+}

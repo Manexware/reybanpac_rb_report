@@ -158,7 +158,7 @@ def ranking_empleados():
 def _populated_select(form):
     cur.execute("SELECT idconvoy from convoy")
     cur.fetchall()
-    zonas = [(str(c[0])+"adfs", c[0]) for c in cur._rows]
+    zonas = [("00"+str(c[0]), c[0]) for c in cur._rows]
     form.zona.choices = zonas
 
 if __name__ == '__main__':
